@@ -15,6 +15,8 @@
 		042020591E8D5DFD00ABE634 /* PostsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042020581E8D5DFD00ABE634 /* PostsCell.swift */; };
 		0420205B1E8D5E0500ABE634 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0420205A1E8D5E0500ABE634 /* Post.swift */; };
 		BF26DF3F026C5B4D358B5D53 /* Pods_tnvMemogram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ACCC8F49B255EA01517AD61 /* Pods_tnvMemogram.framework */; };
+		F4D29C3F1E9379C20091A1CE /* New.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D29C3E1E9379C20091A1CE /* New.swift */; };
+		F4D29C411E9379D90091A1CE /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D29C401E9379D90091A1CE /* NewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		053BDA3386F98F6CF55C887A /* Pods-tnvMemogram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tnvMemogram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tnvMemogram/Pods-tnvMemogram.debug.xcconfig"; sourceTree = "<group>"; };
 		25472F3E3C64F49EBAE31AD9 /* Pods-tnvMemogram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tnvMemogram.release.xcconfig"; path = "Pods/Target Support Files/Pods-tnvMemogram/Pods-tnvMemogram.release.xcconfig"; sourceTree = "<group>"; };
 		4ACCC8F49B255EA01517AD61 /* Pods_tnvMemogram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tnvMemogram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4D29C3E1E9379C20091A1CE /* New.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = New.swift; sourceTree = "<group>"; };
+		F4D29C401E9379D90091A1CE /* NewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 		042020501E8D5CC100ABE634 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F4D29C3E1E9379C20091A1CE /* New.swift */,
 				0420205A1E8D5E0500ABE634 /* Post.swift */,
 			);
 			name = Model;
@@ -97,6 +102,7 @@
 		042020521E8D5CCA00ABE634 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F4D29C401E9379D90091A1CE /* NewViewController.swift */,
 				042020561E8D5DE400ABE634 /* FeedsView.swift */,
 			);
 			name = Controller;
@@ -251,7 +257,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				042020591E8D5DFD00ABE634 /* PostsCell.swift in Sources */,
+				F4D29C3F1E9379C20091A1CE /* New.swift in Sources */,
 				0420203F1E8D5C7B00ABE634 /* AppDelegate.swift in Sources */,
+				F4D29C411E9379D90091A1CE /* NewViewController.swift in Sources */,
 				042020571E8D5DE400ABE634 /* FeedsView.swift in Sources */,
 				0420205B1E8D5E0500ABE634 /* Post.swift in Sources */,
 			);
