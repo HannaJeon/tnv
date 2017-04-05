@@ -45,7 +45,7 @@ struct Post {
             for postObject in postObjects {
                 if let date = postObject["createdAt"] as? String {
                     let dateForm = DateFormatter()
-                    dateForm.dateFormat = "yyyy-MM-dd"
+                    dateForm.dateFormat = "yyyy-MM-dd-HH-mm-ss"
                     print(date)
                     createdAt = dateForm.date(from: date)!
                 }
@@ -61,6 +61,7 @@ struct Post {
                     posts.append(post)
                 }
             }
+            posts.sort(by: { return $0.createdAt > $1.createdAt })
             callback(posts)
         }
     }
