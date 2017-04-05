@@ -12,6 +12,7 @@ import Alamofire
 class NewViewController: UIViewController {
 
     @IBOutlet weak var newMessage: UITextView!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,27 +27,24 @@ class NewViewController: UIViewController {
     
     @IBAction func saveButton(_ sender: Any) {
         requestPost()
-        print(newMessage.text)
     }
     
     func requestPost() {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         
-        let aa = Post(id: "aa", user: "aa", photoId: "aa", createdAt: Date(), isLiked: true, likedCount: 1, message: "aa")
+        let aa = Post(id: "Test", user: "Test", photoId: "test", createdAt: Date(), isLiked: true, likedCount: 1, message: "")
         let parameters: [String:Any] = [
             "id" : aa.id,
             "user" : aa.user,
             "photoId" : aa.photoId,
-            "createdAt" : formatter.string(from: aa.createdAt),
+            "createdAt" : formatter.string(from: datePicker.date),
             "isLiked" : aa.isLiked,
             "likeCount" : aa.likedCount,
-            "message" : aa.message
+            "message" : newMessage.text
         ]
         
-        Alamofire.request("http://localhost:8000/api/post", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { (response) in
-//            print(response)
-        }
+        Alamofire.request("http://localhost:8000/api/post", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { (response) in }
     }
 
     /*
