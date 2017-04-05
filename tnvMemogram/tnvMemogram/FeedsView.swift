@@ -26,12 +26,17 @@ class FeedsView: UIViewController, UITableViewDelegate, UITableViewDataSource {
             self.tableView.reloadData()
             print(posts)
         }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         NotificationCenter.default.addObserver(forName: .UIContentSizeCategoryDidChange, object: .none, queue: OperationQueue.main) { [weak self] _ in self?.tableView.reloadData()
+        }
+        Post.postsFromBundle { (posts) in
+            self.posts = posts
+            self.tableView.reloadData()
         }
     }
 

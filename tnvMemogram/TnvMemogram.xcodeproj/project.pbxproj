@@ -84,8 +84,8 @@
 		042020501E8D5CC100ABE634 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F4D29C3E1E9379C20091A1CE /* NewPost.swift */,
 				0420205A1E8D5E0500ABE634 /* Post.swift */,
+				F4D29C3E1E9379C20091A1CE /* NewPost.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
