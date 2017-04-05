@@ -13,6 +13,8 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
 
     @IBOutlet weak var newMessage: UITextView!
     @IBOutlet weak var datePicker: UIDatePicker!
+    var selectedImage = UIImage()
+//    var returnedImageId = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,19 +48,43 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     func requestPost() {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
+        let url = "http://localhost:8000/api/upload"
         
-        let aa = Post(id: "Test", user: "Test", photoId: "test", createdAt: Date(), isLiked: true, likedCount: 1, message: "")
-        let parameters: [String:Any] = [
-            "id" : aa.id,
-            "user" : aa.user,
-            "photoId" : aa.photoId,
-            "createdAt" : formatter.string(from: datePicker.date),
-            "isLiked" : aa.isLiked,
-            "likeCount" : aa.likedCount,
-            "message" : newMessage.text
-        ]
-        
-        Alamofire.request("http://localhost:8000/api/post", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { (response) in }
+        Alamofire.upload(multipartFormData: {
+            multipartFormData in
+            
+            if let imageData = UIImageJPEGRepresentation(self.selectedImage, 0.6) {
+                multipartFormData.append(imageData, withName: "image", fileName: "file.png", mimeType: "image/png")
+            }
+        }, to: url) { encodingResult in
+            switch encodingResult {
+            case .success(let upload, _, _):
+                print("success")
+                upload.responseJSON(completionHandler: { response in
+                    if let ok = response.result.value {
+                        
+                        if let dict = ok as? [String:String] {
+                            let aa = Post(id: "fefefe", user: "iuuuu", photoId: dict["ok"]!, createdAt: Date(), isLiked: false, likedCount: 0, message: "")
+                            let parameters: [String:Any] = [
+                                "id" : aa.id,
+                                "user" : aa.user,
+                                "photoId" : aa.photoId,
+                                "createdAt" : formatter.string(from: self.datePicker.date),
+                                "isLiked" : aa.isLiked,
+                                "likeCount" : aa.likedCount,
+                                "message" : self.newMessage.text
+                            ]
+
+                            Alamofire.request("http://localhost:8000/api/post", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { (response) in }
+                        }
+                    }
+                })
+            case .failure(let error):
+                print("failed")
+                print(error)
+            }
+        }
+
     }
     
     fileprivate func presentImagePickerController() {
@@ -71,6 +97,9 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        guard let picked = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
+        self.selectedImage = picked
+        self.dismiss(animated: true, completion: nil)
     }
 
     /*
