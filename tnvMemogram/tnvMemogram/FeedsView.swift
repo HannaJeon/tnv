@@ -11,7 +11,6 @@ import UIKit
 class FeedsView: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var tabBar: UITabBar!
     
     var posts = [Post]()
     
@@ -61,7 +60,6 @@ class FeedsView: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
     
 
     /*

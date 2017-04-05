@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--New View Controller-->
+        <!--Title-->
         <scene sceneID="P11-vJ-NUp">
             <objects>
                 <viewController id="X7b-SW-sHN" customClass="NewViewController" customModule="tnvMemogram" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,17 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Mj-PG-9Nb">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Title" id="F9j-bg-Zrg">
-                                        <barButtonItem key="leftBarButtonItem" title="close" id="W4q-iS-xNQ"/>
-                                        <barButtonItem key="rightBarButtonItem" title="save" id="4zS-gF-hON"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="PT2-MA-YG3">
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="PT2-MA-YG3">
                                 <rect key="frame" x="0.0" y="82" width="314" height="43"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="512981587.04584402">
@@ -53,10 +43,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="dn9-Bp-wi3">
+                        <barButtonItem key="leftBarButtonItem" title="close" id="W4q-iS-xNQ"/>
+                        <barButtonItem key="rightBarButtonItem" title="save" id="4zS-gF-hON">
+                            <connections>
+                                <action selector="saveButton:" destination="X7b-SW-sHN" id="EZg-4R-PWf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="newMessage" destination="ZEU-g8-RfN" id="R8y-rB-4Uw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MBy-s5-ZzF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="908" y="824"/>
+            <point key="canvasLocation" x="1486" y="822"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6aC-FM-kpg">
@@ -69,7 +70,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="oWR-Yz-2fF" kind="relationship" relationship="rootViewController" id="iGh-c5-CIa"/>
+                        <segue destination="oWR-Yz-2fF" kind="relationship" relationship="rootViewController" id="WIT-pO-nyP"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xEL-yC-90H" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -158,6 +159,14 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulp-hD-UKy">
+                                <rect key="frame" x="162" y="617" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="plus"/>
+                                <connections>
+                                    <segue destination="m1C-c3-6xr" kind="presentation" id="DRq-te-0zr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -168,10 +177,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="464-ma-iGu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="908" y="131"/>
+            <point key="canvasLocation" x="846" y="125"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="87b-Z5-bxH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="m1C-c3-6xr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ruV-jd-8ma">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="X7b-SW-sHN" kind="relationship" relationship="rootViewController" id="cyg-zB-GFg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zGk-3d-Ayn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="845.60000000000002" y="821.73913043478262"/>
         </scene>
     </scenes>
     <resources>
+        <image name="plus" width="26" height="26"/>
         <image name="whiteHeart" width="50" height="50"/>
     </resources>
 </document>
