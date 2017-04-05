@@ -27,7 +27,9 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     @IBAction func saveButton(_ sender: Any) {
         requestPost()
+        self.dismiss(animated: true, completion: nil)
     }
+    
     
     func requestPost() {
         let formatter = DateFormatter()
