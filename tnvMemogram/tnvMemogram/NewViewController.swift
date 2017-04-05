@@ -46,7 +46,7 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         
-        let aa = Post(id: "Test", user: "Test", photoId: "test", createdAt: Date(), isLiked: true, likedCount: 1, message: "")
+        let aa = Post()
         let parameters: [String:Any] = [
             "id" : aa.id,
             "user" : aa.user,

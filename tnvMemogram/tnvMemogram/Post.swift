@@ -28,6 +28,16 @@ struct Post {
         self.likedCount = likedCount
         self.message = message
     }
+    
+    init() {
+        self.id = ""
+        self.user = ""
+        self.photoId = ""
+        self.createdAt = Date()
+        self.isLiked = true
+        self.likedCount = 0
+        self.message = ""
+    }
 
     static func postsFromBundle(callback: @escaping (_ posts: [Post]) -> Void) {
 
@@ -46,7 +56,6 @@ struct Post {
                 if let date = postObject["createdAt"] as? String {
                     let dateForm = DateFormatter()
                     dateForm.dateFormat = "yyyy-MM-dd"
-                    print(date)
                     createdAt = dateForm.date(from: date)!
                 }
                 if let isLikedInt = postObject["isLiked"] as? Bool {

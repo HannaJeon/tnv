@@ -66,6 +66,9 @@ class FeedsView: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func sort() {
+        
+    }
 
     /*
     // MARK: - Navigation
