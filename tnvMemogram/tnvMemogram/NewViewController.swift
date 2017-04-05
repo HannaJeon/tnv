@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class NewViewController: UIViewController {
+class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var newMessage: UITextView!
     
@@ -47,6 +47,18 @@ class NewViewController: UIViewController {
         Alamofire.request("http://localhost:8000/api/post", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { (response) in
 //            print(response)
         }
+    }
+    
+    fileprivate func presentImagePickerController() {
+        let pickerController = UIImagePickerController()
+        pickerController.delegate = self
+        self.present(pickerController, animated: true, completion: nil)
+    }
+    @IBAction func pickButton(_ sender: Any) {
+        self.presentImagePickerController()
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
     }
 
     /*

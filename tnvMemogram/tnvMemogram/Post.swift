@@ -46,6 +46,7 @@ struct Post {
                 if let date = postObject["createdAt"] as? String {
                     let dateForm = DateFormatter()
                     dateForm.dateFormat = "yyyy-MM-dd"
+                    print(date)
                     createdAt = dateForm.date(from: date)!
                 }
                 if let isLikedInt = postObject["isLiked"] as? Bool {
