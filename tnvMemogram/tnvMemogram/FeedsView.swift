@@ -1,29 +1,38 @@
 //
-//  PostsTableViewController.swift
-//  tnvMemogram
+//  Feeds.swift
+//  TnvMemogram
 //
-//  Created by Mac on 2017. 3. 31..
+//  Created by Mac on 2017. 4. 5..
 //  Copyright © 2017년 Hanna. All rights reserved.
 //
 
 import UIKit
 
-class FeedsView: UITableViewController {
+class FeedsView: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tabBar: UITabBar!
+    
     var posts = [Post]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        // Do any additional setup after loading the view.
         Post.postsFromBundle { (posts) in
             self.posts = posts
             self.tableView.reloadData()
-            print(self.posts)
+            print(posts)
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        NotificationCenter.default.addObserver(forName: .UIContentSizeCategoryDidChange, object: .none, queue: OperationQueue.main) { [weak self] _ in self?.tableView.reloadData()
         }
     }
 
@@ -31,69 +40,29 @@ class FeedsView: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+   
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "TimeLineView", for: indexPath) as! PostsCell
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy.MM.dd"
+        formatter.dateFormat = "yyyy-MM-dd"
         
         let post = posts[indexPath.row]
-
+        
         cell.userLabel.text = post.user
         cell.createdAtLabel.text = formatter.string(from: post.createdAt)
-        cell.messageLabel.text = post.message!
+        cell.messageLabel.text = post.message
         cell.likedLabel.text = "\(post.likedCount!) 명이 좋아합니다"
-
+        
         return cell
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
+    
+    
 
     /*
     // MARK: - Navigation
@@ -106,3 +75,30 @@ class FeedsView: UITableViewController {
     */
 
 }
+
+
+//extension Feeds: UITableViewDataSource {
+//    
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        print("aAAAAAAAAAAAAA")
+//        return posts.count
+//    }
+//    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "TimeLineView", for: indexPath) as! PostsCell
+//        
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "yyyy-MM-dd"
+//        
+//        let post = posts[indexPath.row]
+//        
+//        cell.userLabel.text = post.user
+//        cell.createdAtLabel.text = formatter.string(from: post.createdAt)
+//        cell.messageLabel.text = post.message
+//        cell.likedLabel.text = "\(post.likedCount!) 명이 좋아합니다"
+//        
+//        print("BBBBBBBBBBBB")
+//        return cell
+//    }
+//}

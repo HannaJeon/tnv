@@ -7,28 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041FA21E1E9484E00008AB76 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041FA21D1E9484E00008AB76 /* TabBarController.swift */; };
 		0420203F1E8D5C7B00ABE634 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0420203E1E8D5C7B00ABE634 /* AppDelegate.swift */; };
 		042020441E8D5C7B00ABE634 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042020421E8D5C7B00ABE634 /* Main.storyboard */; };
 		042020461E8D5C7B00ABE634 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 042020451E8D5C7B00ABE634 /* Assets.xcassets */; };
 		042020491E8D5C7B00ABE634 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042020471E8D5C7B00ABE634 /* LaunchScreen.storyboard */; };
-		042020571E8D5DE400ABE634 /* FeedsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042020561E8D5DE400ABE634 /* FeedsView.swift */; };
 		042020591E8D5DFD00ABE634 /* PostsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042020581E8D5DFD00ABE634 /* PostsCell.swift */; };
 		0420205B1E8D5E0500ABE634 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0420205A1E8D5E0500ABE634 /* Post.swift */; };
+		0421AA701E93ECBC00371E13 /* FeedsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421AA6F1E93ECBC00371E13 /* FeedsView.swift */; };
 		BF26DF3F026C5B4D358B5D53 /* Pods_tnvMemogram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ACCC8F49B255EA01517AD61 /* Pods_tnvMemogram.framework */; };
 		F4D29C3F1E9379C20091A1CE /* New.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D29C3E1E9379C20091A1CE /* New.swift */; };
 		F4D29C411E9379D90091A1CE /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D29C401E9379D90091A1CE /* NewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		041FA21D1E9484E00008AB76 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		0420203B1E8D5C7A00ABE634 /* tnvMemogram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tnvMemogram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0420203E1E8D5C7B00ABE634 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		042020431E8D5C7B00ABE634 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		042020451E8D5C7B00ABE634 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		042020481E8D5C7B00ABE634 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0420204A1E8D5C7B00ABE634 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		042020561E8D5DE400ABE634 /* FeedsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedsView.swift; sourceTree = "<group>"; };
 		042020581E8D5DFD00ABE634 /* PostsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsCell.swift; sourceTree = "<group>"; };
 		0420205A1E8D5E0500ABE634 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		0421AA6F1E93ECBC00371E13 /* FeedsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedsView.swift; sourceTree = "<group>"; };
 		053BDA3386F98F6CF55C887A /* Pods-tnvMemogram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tnvMemogram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tnvMemogram/Pods-tnvMemogram.debug.xcconfig"; sourceTree = "<group>"; };
 		25472F3E3C64F49EBAE31AD9 /* Pods-tnvMemogram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tnvMemogram.release.xcconfig"; path = "Pods/Target Support Files/Pods-tnvMemogram/Pods-tnvMemogram.release.xcconfig"; sourceTree = "<group>"; };
 		4ACCC8F49B255EA01517AD61 /* Pods_tnvMemogram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tnvMemogram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,7 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				F4D29C401E9379D90091A1CE /* NewViewController.swift */,
-				042020561E8D5DE400ABE634 /* FeedsView.swift */,
+				0421AA6F1E93ECBC00371E13 /* FeedsView.swift */,
+				041FA21D1E9484E00008AB76 /* TabBarController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -260,8 +263,9 @@
 				F4D29C3F1E9379C20091A1CE /* New.swift in Sources */,
 				0420203F1E8D5C7B00ABE634 /* AppDelegate.swift in Sources */,
 				F4D29C411E9379D90091A1CE /* NewViewController.swift in Sources */,
-				042020571E8D5DE400ABE634 /* FeedsView.swift in Sources */,
+				041FA21E1E9484E00008AB76 /* TabBarController.swift in Sources */,
 				0420205B1E8D5E0500ABE634 /* Post.swift in Sources */,
+				0421AA701E93ECBC00371E13 /* FeedsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
