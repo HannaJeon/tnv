@@ -11,4 +11,6 @@ import Alamofire
 
 class NewPost {
     
+    
+    
 }

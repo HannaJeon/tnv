@@ -25,6 +25,18 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func closeButton(_ sender: Any) {
+        let alert = UIAlertController(title: "Alert", message: "글 작성을 취소하겠습니까?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { (_) in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
     @IBAction func saveButton(_ sender: Any) {
         requestPost()
         self.dismiss(animated: true, completion: nil)
