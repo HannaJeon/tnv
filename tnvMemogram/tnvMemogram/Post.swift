@@ -30,17 +30,6 @@ struct Post {
         self.message = message
         self.imageData = imageData
     }
-    
-    init() {
-        self.id = ""
-        self.user = ""
-        self.photoId = ""
-        self.createdAt = Date()
-        self.isLiked = true
-        self.likedCount = 0
-        self.message = ""
-        self.imageData = Data()
-    }
 
     static func postsFromBundle(callback: @escaping (_ posts: [Post]) -> Void) {
 
