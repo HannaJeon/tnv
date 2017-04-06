@@ -74,7 +74,7 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
                                 "likeCount" : post.likedCount,
                                 "message" : self.newMessage.text
                             ]
-
+                            
                             Alamofire.request("http://localhost:8000/api/post", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { (response) in }
                         }
                     }

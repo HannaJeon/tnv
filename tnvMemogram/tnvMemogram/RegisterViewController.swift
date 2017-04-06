@@ -32,7 +32,9 @@ class RegisterViewController: UIViewController {
     
     func requestUser() {
 
-        let url = "http://localhost:8000/api/user/login"
+        var result = Bool()
+        
+        let url = "http://localhost:8000/api/user/register"
         let parameters: [String: Any] = [
             "email": String(describing: emTextField.text!),
             "password": String(describing: pwTextField.text!)
@@ -42,8 +44,7 @@ class RegisterViewController: UIViewController {
         Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { (response) in
             var temp = response.result.value as! [String:Any]
             if let b = temp["message"] as? Bool {
-                print(2, b)
-            }
+                print(b,"AAAAAAA")
             /*
             if response["message"] == "0" {
              
@@ -62,11 +63,27 @@ class RegisterViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             }*/
         }
-
+        
+    }
+        //return result
     }
     
     @IBAction func accountCreated(_ sender: Any) {
         requestUser()
+        /*if a == true {
+            let alert = UIAlertController(title: "Alert", message: "회원가입이 완료되었습니다.", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
+            
+        } else {
+            let alert = UIAlertController(title: "Alert", message: "이미 가입된 사용자입니다.", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
+        }*/
     }
     
     @IBAction func alreadyRegistered(_ sender: Any) {
