@@ -66,7 +66,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MBy-s5-ZzF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1732" y="822"/>
+            <point key="canvasLocation" x="1742" y="822"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6aC-FM-kpg">
@@ -162,6 +162,7 @@
                                             <outlet property="createdAtLabel" destination="Z2G-IK-bgT" id="Teg-pG-HR9"/>
                                             <outlet property="likedButton" destination="5oR-5h-5nQ" id="DYy-Ap-sSu"/>
                                             <outlet property="likedLabel" destination="DpW-dk-RW5" id="uuz-C7-wr4"/>
+                                            <outlet property="mainImage" destination="wvk-3W-b5u" id="LEv-NO-WgX"/>
                                             <outlet property="messageLabel" destination="lOu-wW-MoV" id="JoN-Bo-ie6"/>
                                             <outlet property="userLabel" destination="b4W-Dr-Jwq" id="ZUq-Xk-cxB"/>
                                         </connections>

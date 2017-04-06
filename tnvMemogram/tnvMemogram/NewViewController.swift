@@ -47,7 +47,7 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     func requestPost() {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.dateFormat = "yyyy-MM-dd-HH-mm-ss"
         let url = "http://localhost:8000/api/upload"
         
         Alamofire.upload(multipartFormData: {
@@ -64,14 +64,14 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
                     if let ok = response.result.value {
                         
                         if let dict = ok as? [String:String] {
-                            let aa = Post(id: "fefefe", user: "iuuuu", photoId: dict["ok"]!, createdAt: Date(), isLiked: false, likedCount: 0, message: "")
+                            let post = Post(id: "fefefe", user: "iuuuu", photoId: dict["ok"]!, createdAt: Date(), isLiked: false, likedCount: 0, message: "", imageData: Data())
                             let parameters: [String:Any] = [
-                                "id" : aa.id,
-                                "user" : aa.user,
-                                "photoId" : aa.photoId,
+                                "id" : post.id,
+                                "user" : post.user,
+                                "photoId" : post.photoId,
                                 "createdAt" : formatter.string(from: self.datePicker.date),
-                                "isLiked" : aa.isLiked,
-                                "likeCount" : aa.likedCount,
+                                "isLiked" : post.isLiked,
+                                "likeCount" : post.likedCount,
                                 "message" : self.newMessage.text
                             ]
 
@@ -84,7 +84,6 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
                 print(error)
             }
         }
-
     }
     
     fileprivate func presentImagePickerController() {

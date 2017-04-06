@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Alamofire
 
 class FeedsView: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     
     var posts = [Post]()
+    var imageData = Data()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,14 +60,17 @@ class FeedsView: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         let post = posts[indexPath.row]
         
+//        var image: Data = UIImagePNGRepresentation(post.imageData)
+        
         cell.userLabel.text = post.user
         cell.createdAtLabel.text = formatter.string(from: post.createdAt)
         cell.messageLabel.text = post.message
         cell.likedLabel.text = "\(post.likedCount!) 명이 좋아합니다"
+        cell.mainImage.image = UIImage(data: post.imageData)
         
         return cell
     }
-    
+
 
     /*
     // MARK: - Navigation
