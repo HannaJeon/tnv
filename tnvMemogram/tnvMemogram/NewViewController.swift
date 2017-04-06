@@ -44,6 +44,7 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         self.dismiss(animated: true, completion: nil)
     }
     
+    
     func requestPost() {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd-HH-mm-ss"
