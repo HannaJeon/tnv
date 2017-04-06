@@ -46,7 +46,7 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     func requestPost() {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.dateFormat = "yyyy-MM-dd-HH-mm-ss"
         let url = "http://localhost:8000/api/upload"
         
         Alamofire.upload(multipartFormData: {
