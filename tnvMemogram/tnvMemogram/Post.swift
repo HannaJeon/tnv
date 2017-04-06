@@ -51,7 +51,6 @@ struct Post {
                 if let path = postObject["photoId"] as? String {
                     Alamofire.request("http://localhost:8000/\(path)").responseData(completionHandler: { (response) in
                         imageData = response.result.value!
-                        print("AAAAAAAAA", imageData)
                         
                         if let date = postObject["createdAt"] as? String {
                             let dateForm = DateFormatter()
@@ -70,7 +69,6 @@ struct Post {
                             let message = postObject["message"] as? String {
                             let post = Post(id: id, user: user, photoId: photoId, createdAt: createdAt, isLiked: isLiked, likedCount: likedCount, message: message, imageData: imageData)
                             posts.append(post)
-                            print(11111111)
                         }
                         posts.sort(by: { return $0.createdAt > $1.createdAt })
                         callback(posts)

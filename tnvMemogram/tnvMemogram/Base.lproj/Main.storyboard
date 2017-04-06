@@ -169,10 +169,19 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulp-hD-UKy">
-                                <rect key="frame" x="162" y="617" width="50" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SI6-Nl-pON">
+                                <rect key="frame" x="16" y="617" width="67" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="plus"/>
+                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutButton:" destination="oWR-Yz-2fF" eventType="touchUpInside" id="sgM-8L-xW8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulp-hD-UKy">
+                                <rect key="frame" x="309" y="617" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="plus" image="plus"/>
                                 <connections>
                                     <segue destination="m1C-c3-6xr" kind="presentation" identifier="" id="DRq-te-0zr"/>
                                 </connections>
@@ -187,12 +196,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="464-ma-iGu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="846" y="125"/>
+            <point key="canvasLocation" x="845.60000000000002" y="124.58770614692655"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="rQv-Ic-hlw">
             <objects>
-                <viewController id="QKa-Fb-xva" customClass="LoginViewController" customModule="tnvMemogram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signup" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QKa-Fb-xva" customClass="LoginViewController" customModule="tnvMemogram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2s4-kk-w7B"/>
                         <viewControllerLayoutGuide type="bottom" id="Eai-fd-AtY"/>

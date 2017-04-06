@@ -60,8 +60,6 @@ class FeedsView: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         let post = posts[indexPath.row]
         
-//        var image: Data = UIImagePNGRepresentation(post.imageData)
-        
         cell.userLabel.text = post.user
         cell.createdAtLabel.text = formatter.string(from: post.createdAt)
         cell.messageLabel.text = post.message
@@ -71,6 +69,16 @@ class FeedsView: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 
+    @IBAction func logoutButton(_ sender: Any) {
+        let alert = UIAlertController(title: "Alert", message: "로그아웃 하시겠습니까?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "NO", style: UIAlertActionStyle.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "YES", style: UIAlertActionStyle.default, handler: { (_) in
+            let vc: LoginViewController = self.storyboard?.instantiateViewController(withIdentifier: "signup") as! LoginViewController
+            self.present(vc, animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation
