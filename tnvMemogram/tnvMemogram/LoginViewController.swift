@@ -65,6 +65,7 @@ class LoginViewController: UIViewController {
                     isUser = value
                 }
             }
+            print(isUser)
             callback(isUser)
         }
     }
@@ -100,7 +101,9 @@ class LoginViewController: UIViewController {
     @IBAction func loginButton(_ sender: Any) {
         
         loginReq { (isUser) in
+//            print(isUser)
             if isUser == true {
+                self.saveLoginStatus()
                 let vc : FeedsView = self.storyboard?.instantiateViewController(withIdentifier: "mainPosts") as! FeedsView
                 let navigationController = UINavigationController(rootViewController: vc)
                 self.present(navigationController, animated: true, completion: nil)
@@ -110,12 +113,22 @@ class LoginViewController: UIViewController {
                 alert.addAction(UIAlertAction(title: "NO", style: UIAlertActionStyle.cancel, handler: nil))
                 alert.addAction(UIAlertAction(title: "YES", style: UIAlertActionStyle.default, handler: { (_) in
                     self.accountCreated((Any).self)
+                    self.saveLoginStatus()
+                    let vc : FeedsView = self.storyboard?.instantiateViewController(withIdentifier: "mainPosts") as! FeedsView
+                    let navigationController = UINavigationController(rootViewController: vc)
+                    self.present(navigationController, animated: true, completion: nil)
                 }))
                 
                 self.present(alert, animated: true, completion: nil)
             }
+            
         }
     }
+    func saveLoginStatus() {
+        let defaults = UserDefaults.standard
+        defaults.set(true, forKey: "login")
+    }
+    
     
 
     /*

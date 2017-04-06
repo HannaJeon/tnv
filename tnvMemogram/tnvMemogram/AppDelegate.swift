@@ -15,6 +15,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let defaults = UserDefaults.standard
+        if let loginStatus = defaults.object(forKey: "login") as? Bool {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            if loginStatus == true {
+                
+                let vc : FeedsView = storyboard.instantiateViewController(withIdentifier: "mainPosts") as! FeedsView
+                let navigationController = UINavigationController(rootViewController: vc)
+                self.window?.rootViewController = navigationController
+            } else {
+                let lvc = storyboard.instantiateViewController(withIdentifier: "signup") as! LoginViewController
+                self.window?.rootViewController = lvc
+            }
+        }
+        
         return true
     }
 

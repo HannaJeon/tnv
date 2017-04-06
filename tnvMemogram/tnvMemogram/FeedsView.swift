@@ -26,22 +26,18 @@ class FeedsView: UIViewController, UITableViewDelegate, UITableViewDataSource {
         Post.postsFromBundle { (posts) in
             self.posts = posts
             self.tableView.reloadData()
-            print(posts)
         }
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        NotificationCenter.default.addObserver(forName: .UIContentSizeCategoryDidChange, object: .none, queue: OperationQueue.main) { [weak self] _ in self?.tableView.reloadData()
-        }
         Post.postsFromBundle { (posts) in
             self.posts = posts
             self.tableView.reloadData()
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -74,10 +70,27 @@ class FeedsView: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         alert.addAction(UIAlertAction(title: "NO", style: UIAlertActionStyle.default, handler: nil))
         alert.addAction(UIAlertAction(title: "YES", style: UIAlertActionStyle.default, handler: { (_) in
+            self.saveLogoutStatus()
             let vc: LoginViewController = self.storyboard?.instantiateViewController(withIdentifier: "signup") as! LoginViewController
             self.present(vc, animated: true, completion: nil)
         }))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func saveLogoutStatus() {
+        let defaults = UserDefaults.standard
+        defaults.set(false, forKey: "login")
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let dvc = storyboard?.instantiateViewController(withIdentifier: "detail") as! DetailViewController
+        let post = posts[indexPath.row]
+        
+        dvc.image = UIImage(data: post.imageData)!
+        dvc.text = post.message!
+        dvc.count = post.likedCount
+        
+        self.navigationController?.pushViewController(dvc, animated: true)
     }
 
     /*

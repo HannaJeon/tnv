@@ -41,6 +41,7 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     @IBAction func saveButton(_ sender: Any) {
         requestPost()
+
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -75,7 +76,9 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
                                 "message" : self.newMessage.text
                             ]
                             
-                            Alamofire.request("http://localhost:8000/api/post", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { (response) in }
+                            Alamofire.request("http://localhost:8000/api/post", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { (response) in
+                                
+                            }
                         }
                     }
                 })

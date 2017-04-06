@@ -69,6 +69,7 @@ struct Post {
                             let message = postObject["message"] as? String {
                             let post = Post(id: id, user: user, photoId: photoId, createdAt: createdAt, isLiked: isLiked, likedCount: likedCount, message: message, imageData: imageData)
                             posts.append(post)
+                            
                         }
                         posts.sort(by: { return $0.createdAt > $1.createdAt })
                         callback(posts)
