@@ -15,7 +15,8 @@ class PostsCell: UITableViewCell {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var likedLabel: UILabel!
     @IBOutlet weak var likedButton: UIButton!
-
+    @IBOutlet weak var mainImage: UIImageView!
+    
     @IBAction func likedpressButton(_ sender: UIButton) {
 
         likedButton.setImage(#imageLiteral(resourceName: "whiteHeart"), for: .normal)
