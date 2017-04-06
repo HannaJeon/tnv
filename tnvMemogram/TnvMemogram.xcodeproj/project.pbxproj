@@ -15,9 +15,8 @@
 		0420205B1E8D5E0500ABE634 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0420205A1E8D5E0500ABE634 /* Post.swift */; };
 		0421AA701E93ECBC00371E13 /* FeedsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421AA6F1E93ECBC00371E13 /* FeedsView.swift */; };
 		BF26DF3F026C5B4D358B5D53 /* Pods_tnvMemogram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ACCC8F49B255EA01517AD61 /* Pods_tnvMemogram.framework */; };
-		F4D29C3F1E9379C20091A1CE /* NewPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D29C3E1E9379C20091A1CE /* NewPost.swift */; };
 		F4D29C411E9379D90091A1CE /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D29C401E9379D90091A1CE /* NewViewController.swift */; };
-		F4D29C431E94F8C30091A1CE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D29C421E94F8C30091A1CE /* RegisterViewController.swift */; };
+		F4D29C431E94F8C30091A1CE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D29C421E94F8C30091A1CE /* LoginViewController.swift */; };
 		F4D29C451E94F8E00091A1CE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D29C441E94F8E00091A1CE /* User.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,9 +33,8 @@
 		053BDA3386F98F6CF55C887A /* Pods-tnvMemogram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tnvMemogram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tnvMemogram/Pods-tnvMemogram.debug.xcconfig"; sourceTree = "<group>"; };
 		25472F3E3C64F49EBAE31AD9 /* Pods-tnvMemogram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tnvMemogram.release.xcconfig"; path = "Pods/Target Support Files/Pods-tnvMemogram/Pods-tnvMemogram.release.xcconfig"; sourceTree = "<group>"; };
 		4ACCC8F49B255EA01517AD61 /* Pods_tnvMemogram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tnvMemogram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4D29C3E1E9379C20091A1CE /* NewPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPost.swift; sourceTree = "<group>"; };
 		F4D29C401E9379D90091A1CE /* NewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
-		F4D29C421E94F8C30091A1CE /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		F4D29C421E94F8C30091A1CE /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F4D29C441E94F8E00091A1CE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,7 +88,6 @@
 			children = (
 				F4D29C441E94F8E00091A1CE /* User.swift */,
 				0420205A1E8D5E0500ABE634 /* Post.swift */,
-				F4D29C3E1E9379C20091A1CE /* NewPost.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -107,7 +104,7 @@
 		042020521E8D5CCA00ABE634 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F4D29C421E94F8C30091A1CE /* RegisterViewController.swift */,
+				F4D29C421E94F8C30091A1CE /* LoginViewController.swift */,
 				F4D29C401E9379D90091A1CE /* NewViewController.swift */,
 				0421AA6F1E93ECBC00371E13 /* FeedsView.swift */,
 			);
@@ -263,8 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				042020591E8D5DFD00ABE634 /* PostsCell.swift in Sources */,
-				F4D29C3F1E9379C20091A1CE /* NewPost.swift in Sources */,
-				F4D29C431E94F8C30091A1CE /* RegisterViewController.swift in Sources */,
+				F4D29C431E94F8C30091A1CE /* LoginViewController.swift in Sources */,
 				0420203F1E8D5C7B00ABE634 /* AppDelegate.swift in Sources */,
 				F4D29C451E94F8E00091A1CE /* User.swift in Sources */,
 				F4D29C411E9379D90091A1CE /* NewViewController.swift in Sources */,
