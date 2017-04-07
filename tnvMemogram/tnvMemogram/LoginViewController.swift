@@ -13,7 +13,7 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailInput: UITextField!
     @IBOutlet weak var pwInput: UITextField!
-    
+    var username = String()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +65,8 @@ class LoginViewController: UIViewController {
                     isUser = value
                 }
             }
-            print(isUser)
+//            print(isUser)
+            self.username = parameters["email"] as! String
             callback(isUser)
         }
     }
@@ -101,7 +102,6 @@ class LoginViewController: UIViewController {
     @IBAction func loginButton(_ sender: Any) {
         
         loginReq { (isUser) in
-//            print(isUser)
             if isUser == true {
                 self.saveLoginStatus()
                 let vc : FeedsView = self.storyboard?.instantiateViewController(withIdentifier: "mainPosts") as! FeedsView
@@ -127,6 +127,7 @@ class LoginViewController: UIViewController {
     func saveLoginStatus() {
         let defaults = UserDefaults.standard
         defaults.set(true, forKey: "login")
+        defaults.set(self.username, forKey: "username")
     }
     
     

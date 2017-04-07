@@ -63,9 +63,11 @@ class NewViewController: UIViewController, UIImagePickerControllerDelegate, UINa
                 print("success")
                 upload.responseJSON(completionHandler: { response in
                     if let ok = response.result.value {
+                        let defaults = UserDefaults.standard
+                        let username = defaults.object(forKey: "username") as! String
                         
                         if let dict = ok as? [String:String] {
-                            let post = Post(id: "fefefe", user: "iuuuu", photoId: dict["ok"]!, createdAt: Date(), isLiked: false, likedCount: 0, message: "", imageData: Data())
+                            let post = Post(id: "fefefe", user: username, photoId: dict["ok"]!, createdAt: Date(), isLiked: false, likedCount: 0, message: "", imageData: Data())
                             let parameters: [String:Any] = [
                                 "id" : post.id,
                                 "user" : post.user,
