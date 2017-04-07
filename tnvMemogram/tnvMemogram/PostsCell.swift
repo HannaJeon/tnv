@@ -16,6 +16,7 @@ class PostsCell: UITableViewCell {
     @IBOutlet weak var likedLabel: UILabel!
     @IBOutlet weak var likedButton: UIButton!
     @IBOutlet weak var mainImage: UIImageView!
+    var count = Int()
     
     @IBAction func likedpressButton(_ sender: UIButton) {
 
@@ -23,5 +24,14 @@ class PostsCell: UITableViewCell {
         likedButton.setImage(#imageLiteral(resourceName: "blackHeart"), for: .selected)
 
         likedButton.isSelected = !likedButton.isSelected
+        
+        if likedButton.isSelected {
+            count += 1
+        } else {
+            count -= 1
+        }
+        
+        likedLabel.text = "\(count) 명이 좋아합니다."
+        
     }
 }

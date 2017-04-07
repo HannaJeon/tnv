@@ -59,7 +59,7 @@ class FeedsView: UIViewController, UITableViewDelegate, UITableViewDataSource {
         cell.userLabel.text = post.user
         cell.createdAtLabel.text = formatter.string(from: post.createdAt)
         cell.messageLabel.text = post.message
-        cell.likedLabel.text = "\(post.likedCount!) 명이 좋아합니다"
+        cell.likedLabel.text = "\(post.likedCount!) 명이 좋아합니다."
         cell.mainImage.image = UIImage(data: post.imageData)
         
         return cell
@@ -104,30 +104,3 @@ class FeedsView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     */
 
 }
-
-
-//extension Feeds: UITableViewDataSource {
-//    
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        print("aAAAAAAAAAAAAA")
-//        return posts.count
-//    }
-//    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "TimeLineView", for: indexPath) as! PostsCell
-//        
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "yyyy-MM-dd"
-//        
-//        let post = posts[indexPath.row]
-//        
-//        cell.userLabel.text = post.user
-//        cell.createdAtLabel.text = formatter.string(from: post.createdAt)
-//        cell.messageLabel.text = post.message
-//        cell.likedLabel.text = "\(post.likedCount!) 명이 좋아합니다"
-//        
-//        print("BBBBBBBBBBBB")
-//        return cell
-//    }
-//}

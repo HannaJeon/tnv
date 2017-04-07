@@ -40,9 +40,14 @@ class DetailViewController: UIViewController {
     @IBAction func touchHeart(_ sender: Any) {
         likeButton.setImage(#imageLiteral(resourceName: "whiteHeart"), for: .normal)
         likeButton.setImage(#imageLiteral(resourceName: "blackHeart"), for: .selected)
-        self.count += 1
         
         likeButton.isSelected = !likeButton.isSelected
+        
+        if likeButton.isSelected {
+            count += 1
+        } else {
+            count -= 1
+        }
         draw()
     }
 
