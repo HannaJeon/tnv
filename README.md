@@ -1,6 +1,11 @@
 # Memogram
 > 2주 프로젝트
 
+### TODO
+- (서버) 수정, 삭제 기능
+- (클라이언트) MVC 구현하기. 현재는 뷰에서 바로 네트워크 요청을 하는 상태임.
+- (클라이언트) 좋아요 버튼 구현하기
+
 ### rules
 - 코딩 규칙은 github swift style guide를 따르고, swiftlint의 도움을 받는다.  
 - backlog, todo 등등은 벽에 붙인다.
@@ -10,14 +15,6 @@
 ### backlog & model
 - [backlog](https://docs.google.com/spreadsheets/d/18cglBaYWYpNDDIwHRXVCEKacSvDI4SItYPqrdg8avx4/edit#gid=0)
 - [model](https://docs.google.com/spreadsheets/d/1mX3rOUOKrL21R9qkoC5hwuW3JwshLS3cpcarteG4ynI/edit#gid=0)
-
-### 03-27-17
-- [x] 팀 이름, 규칙 정하고, 프로젝트 진행 시각화 도구 활용하기
-- [x] 깃헙 저장소 만들고 read.md 파일에 규칙들 정리하기
-- [ ] 애자일 개발 방법론 리서치하기
-- [x] 스토리보드 만들기
-- [x] 모델 클래스 구성하기
-- [x] 백로그 작성하기
 
 ### contributor 
 > team 숲(aka. tnv)
